@@ -12,7 +12,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uad-DQ-kBS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.31910059759999998" green="1" blue="0.25719261329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95459851315835198" green="1" blue="0.28294004677604612" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.31910059759999998" green="1" blue="0.25719261329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.59971661259999998" green="0.27949470469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="0.31910059759999998" green="1" blue="0.25719261329999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="JES-EH-heL" kind="relationship" relationship="rootViewController" id="Dtg-PC-63W"/>
@@ -22,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-664" y="270"/>
         </scene>
-        <!--Go offline-->
+        <!--GO ONLINE-->
         <scene sceneID="3dw-rp-VJZ">
             <objects>
                 <viewController id="JES-EH-heL" customClass="GameViewController" sceneMemberID="viewController">
@@ -63,7 +68,7 @@
                             <constraint firstItem="UfR-58-RFp" firstAttribute="top" secondItem="MbR-pm-cNd" secondAttribute="bottom" constant="8" id="xqs-3C-p2M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Go offline" id="IEU-tZ-sj8"/>
+                    <navigationItem key="navigationItem" title="GO ONLINE" id="IEU-tZ-sj8"/>
                     <connections>
                         <outlet property="blackCapturedStoneCountLabel" destination="MbR-pm-cNd" id="GjB-cJ-I8T"/>
                         <outlet property="whiteCapturedStoneCountLabel" destination="DJI-LG-162" id="p34-0b-DiR"/>
