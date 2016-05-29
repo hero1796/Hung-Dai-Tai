@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setUserInteractionEnabled:YES];
     self.game = [[Game alloc] init];
     [self layoutInterface];
     _count = 0;
@@ -56,8 +57,10 @@
     
     [Goban printBoardToConsole:self.game.goban];
     _count++;
-    if(_count == 81)
-    [self scoreGame];
+    if(_count == 18) {
+        [self scoreGame];
+        [self.view setUserInteractionEnabled:NO];
+    }
 }
 
 #pragma mark - Board Drawing
@@ -272,12 +275,20 @@
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
                                                     message:pointTally
-                                                   delegate:nil
+                                                   delegate:self
                                           cancelButtonTitle:cancelButtonTitle
-                                          otherButtonTitles:nil];
+                                          otherButtonTitles:@"Play Again ?",nil];
+    
     [alert show];
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
 
+    }
+    if(buttonIndex == 1) {
+        [self viewDidLoad];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

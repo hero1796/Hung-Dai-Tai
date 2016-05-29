@@ -22,5 +22,5 @@ static NSString * const GobanWhiteStoneFileName = @"whiteStone.png";
 static NSUInteger const GobanRowLength = 9;
 static NSUInteger const GobanColumnLength = 9;
 static NSUInteger const GobanMiddleOffsetSize = 180;
-static float const GobanKomiAmount = 0.5;
+static float const GobanKomiAmount = 6.5;
 static float const stoneSize = 46;

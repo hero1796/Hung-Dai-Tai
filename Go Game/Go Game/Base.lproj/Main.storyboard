@@ -12,7 +12,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uad-DQ-kBS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.59971661259999998" green="0.27949470469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.31910059759999998" green="1" blue="0.25719261329999998" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="JES-EH-heL" kind="relationship" relationship="rootViewController" id="Dtg-PC-63W"/>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.77190066660000001" blue="0.77102297149999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.45233612196495721" blue="0.83055796442943253" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="DJI-LG-162" firstAttribute="top" secondItem="axX-Mv-efM" secondAttribute="bottom" constant="8" id="JIv-7j-0PQ"/>
                             <constraint firstItem="MbR-pm-cNd" firstAttribute="leading" secondItem="Jxo-aO-ZAl" secondAttribute="leading" constant="20" id="Vo2-za-upi"/>
