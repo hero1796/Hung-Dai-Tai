@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bw1-H5-Quv">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Oe7-EG-pey">
+            <objects>
+                <navigationController id="bw1-H5-Quv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uad-DQ-kBS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.59971661259999998" green="0.27949470469999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JES-EH-heL" kind="relationship" relationship="rootViewController" id="Dtg-PC-63W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIX-wL-urw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-664" y="270"/>
+        </scene>
+        <!--Go offline-->
+        <scene sceneID="3dw-rp-VJZ">
+            <objects>
+                <viewController id="JES-EH-heL" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="axX-Mv-efM"/>
+                        <viewControllerLayoutGuide type="bottom" id="UfR-58-RFp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jxo-aO-ZAl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbR-pm-cNd">
+                                <rect key="frame" x="20" y="552" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0PB-7X-U6K"/>
+                                    <constraint firstAttribute="width" constant="100" id="Q7c-t9-FrC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-LG-162">
+                                <rect key="frame" x="480" y="72" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1FY-aN-Wg5"/>
+                                    <constraint firstAttribute="width" constant="100" id="v1W-Uf-0ke"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.77190066660000001" blue="0.77102297149999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DJI-LG-162" firstAttribute="top" secondItem="axX-Mv-efM" secondAttribute="bottom" constant="8" id="JIv-7j-0PQ"/>
+                            <constraint firstItem="MbR-pm-cNd" firstAttribute="leading" secondItem="Jxo-aO-ZAl" secondAttribute="leading" constant="20" id="Vo2-za-upi"/>
+                            <constraint firstAttribute="trailing" secondItem="DJI-LG-162" secondAttribute="trailing" constant="20" id="bEi-hM-8Lk"/>
+                            <constraint firstItem="UfR-58-RFp" firstAttribute="top" secondItem="MbR-pm-cNd" secondAttribute="bottom" constant="8" id="xqs-3C-p2M"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Go offline" id="IEU-tZ-sj8"/>
+                    <connections>
+                        <outlet property="blackCapturedStoneCountLabel" destination="MbR-pm-cNd" id="GjB-cJ-I8T"/>
+                        <outlet property="whiteCapturedStoneCountLabel" destination="DJI-LG-162" id="p34-0b-DiR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZl-aB-a9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="310"/>
+        </scene>
+    </scenes>
+</document>
