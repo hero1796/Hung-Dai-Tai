@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -20,17 +21,54 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="JES-EH-heL" kind="relationship" relationship="rootViewController" id="Dtg-PC-63W"/>
+                        <segue destination="Wov-eq-LPe" kind="relationship" relationship="rootViewController" id="Vdg-cR-UmR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIX-wL-urw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-664" y="270"/>
+            <point key="canvasLocation" x="-966" y="348"/>
+        </scene>
+        <!--Start game-->
+        <scene sceneID="FBP-Z8-udI">
+            <objects>
+                <viewController id="Wov-eq-LPe" userLabel="Start game" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wit-hf-hJL"/>
+                        <viewControllerLayoutGuide type="bottom" id="xex-fm-hbr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qxt-5Z-gDj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fM1-Ss-RlY">
+                                <rect key="frame" x="100" y="250" width="400" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ziy-QW-qBB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <action selector="clickedStartGame:" destination="Wov-eq-LPe" eventType="touchUpInside" id="Q57-LM-Lka"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9545985132" green="1" blue="0.28294004680000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fM1-Ss-RlY" secondAttribute="trailing" constant="100" id="HAD-0Q-ZJz"/>
+                            <constraint firstItem="fM1-Ss-RlY" firstAttribute="leading" secondItem="Qxt-5Z-gDj" secondAttribute="leading" constant="100" id="Xmt-0Z-vPD"/>
+                            <constraint firstItem="fM1-Ss-RlY" firstAttribute="top" secondItem="Qxt-5Z-gDj" secondAttribute="top" constant="250" id="vMV-Uh-eTy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="J9G-TB-lxP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dKG-PS-DxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="220"/>
         </scene>
         <!--GO ONLINE-->
         <scene sceneID="3dw-rp-VJZ">
             <objects>
-                <viewController id="JES-EH-heL" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JES-EH-heL" customClass="GameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="axX-Mv-efM"/>
                         <viewControllerLayoutGuide type="bottom" id="UfR-58-RFp"/>
@@ -49,7 +87,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-LG-162">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-LG-162">
                                 <rect key="frame" x="480" y="72" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1FY-aN-Wg5"/>
@@ -59,9 +97,33 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="60:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDd-cx-gZH">
+                                <rect key="frame" x="478" y="557" width="102" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="9jv-LY-Ota"/>
+                                    <constraint firstAttribute="width" constant="102" id="lC7-fn-ZNo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="60:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcD-In-qQJ">
+                                <rect key="frame" x="20" y="65" width="113" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="Ap1-CT-E6Y"/>
+                                    <constraint firstAttribute="height" constant="52" id="dnh-Yi-sjn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.45233612196495721" blue="0.83055796442943253" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="UfR-58-RFp" firstAttribute="top" secondItem="mDd-cx-gZH" secondAttribute="bottom" id="57f-lW-J6J"/>
+                            <constraint firstItem="kcD-In-qQJ" firstAttribute="top" secondItem="axX-Mv-efM" secondAttribute="bottom" id="8qB-K8-OC5"/>
+                            <constraint firstItem="kcD-In-qQJ" firstAttribute="leading" secondItem="Jxo-aO-ZAl" secondAttribute="leading" constant="20" id="E8z-jd-QaX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mDd-cx-gZH" secondAttribute="trailing" id="Fak-vO-2kM"/>
                             <constraint firstItem="DJI-LG-162" firstAttribute="top" secondItem="axX-Mv-efM" secondAttribute="bottom" constant="8" id="JIv-7j-0PQ"/>
                             <constraint firstItem="MbR-pm-cNd" firstAttribute="leading" secondItem="Jxo-aO-ZAl" secondAttribute="leading" constant="20" id="Vo2-za-upi"/>
                             <constraint firstAttribute="trailing" secondItem="DJI-LG-162" secondAttribute="trailing" constant="20" id="bEi-hM-8Lk"/>
@@ -70,13 +132,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="GO ONLINE" id="IEU-tZ-sj8"/>
                     <connections>
-                        <outlet property="blackCapturedStoneCountLabel" destination="MbR-pm-cNd" id="GjB-cJ-I8T"/>
+                        <outlet property="blackCapturedStoneCountLabel" destination="MbR-pm-cNd" id="pjK-43-BvC"/>
+                        <outlet property="blackRemainingTimeLabel" destination="kcD-In-qQJ" id="2zl-V1-hU9"/>
                         <outlet property="whiteCapturedStoneCountLabel" destination="DJI-LG-162" id="p34-0b-DiR"/>
+                        <outlet property="whiteRemainingTimeLabel" destination="mDd-cx-gZH" id="ggC-pH-Dh9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZl-aB-a9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="310"/>
+            <point key="canvasLocation" x="516" y="304"/>
         </scene>
     </scenes>
 </document>

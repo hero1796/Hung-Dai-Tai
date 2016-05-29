@@ -9,14 +9,20 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property GameViewController *gameVCL;
 @end
 
 @implementation ViewController
+- (IBAction)clickedStartGame:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    _gameVCL = [sb instantiateViewControllerWithIdentifier:@"1"];
+    [self.navigationController pushViewController:_gameVCL animated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

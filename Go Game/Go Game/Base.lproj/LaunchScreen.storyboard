@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Anh-troll-dau-an-3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jeL-NS-wXH">
-                                <rect key="frame" x="130" y="356" width="340" height="194"/>
+                                <rect key="frame" x="50" y="356" width="500" height="224"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo.Png" translatesAutoresizingMaskIntoConstraints="NO" id="eFS-KH-TJ4">
                                 <rect key="frame" x="50" y="90" width="500" height="216"/>
@@ -26,10 +26,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.58559002790000003" green="0.9123946275" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jeL-NS-wXH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="130" id="7c9-wq-D0C"/>
-                            <constraint firstAttribute="trailing" secondItem="jeL-NS-wXH" secondAttribute="trailing" constant="130" id="R7g-xO-1cX"/>
+                            <constraint firstItem="jeL-NS-wXH" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="7c9-wq-D0C"/>
+                            <constraint firstAttribute="trailing" secondItem="jeL-NS-wXH" secondAttribute="trailing" constant="50" id="R7g-xO-1cX"/>
                             <constraint firstItem="jeL-NS-wXH" firstAttribute="top" secondItem="eFS-KH-TJ4" secondAttribute="bottom" constant="50" id="S0D-DQ-kPE"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jeL-NS-wXH" secondAttribute="bottom" constant="50" id="hJi-7v-qoG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="jeL-NS-wXH" secondAttribute="bottom" constant="20" id="hJi-7v-qoG"/>
                             <constraint firstAttribute="trailing" secondItem="eFS-KH-TJ4" secondAttribute="trailing" constant="50" id="iRG-Ha-9k3"/>
                             <constraint firstItem="eFS-KH-TJ4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="nKK-zY-B5h"/>
                             <constraint firstItem="eFS-KH-TJ4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="sYd-Sx-FPh"/>

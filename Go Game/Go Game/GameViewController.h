@@ -11,5 +11,6 @@
 @interface GameViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *blackCapturedStoneCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *whiteCapturedStoneCountLabel;
-
+@property (strong, nonatomic) IBOutlet UILabel *blackRemainingTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *whiteRemainingTimeLabel;
 @end
