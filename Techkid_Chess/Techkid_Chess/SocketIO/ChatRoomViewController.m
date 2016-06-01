@@ -105,6 +105,7 @@
 {
     NSDictionary *val = data[0][0];
     NSLog(@"received message: %@", val);
+    
 }
 
 @end

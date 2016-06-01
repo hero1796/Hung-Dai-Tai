@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Techkid_Chess-Swift.h>
-
+#import <CoreData/CoreData.h>
 @interface ChatRoomViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
 @property SocketIOClient* socket;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

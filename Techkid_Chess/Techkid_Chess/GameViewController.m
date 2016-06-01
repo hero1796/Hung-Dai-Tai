@@ -29,7 +29,6 @@
     
 }
 
-
 - (void) customNavigation {
     //---------------------------------------------------------
     //change back button icon
@@ -60,91 +59,17 @@
     self.whiteCapturedStoneCountLabel.text = @"0";
     [self viewDidLoad];
 }
+#pragma mark - Using SocketIO
+//- (void) sendMessage:(NSString *)message
+//{
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        if (self.socketRoom.roomReady) {
+//            [self.socketRoom.socket emit:@"message" withItems:@[message, self.socketRoom.roomName, self.socketRoom.userName]];
+//        }
+//        [self sendMessage:[NSString stringWithFormat:@"message %d", self.messageIdx++]];
+//    });
+//}
 
-#pragma mark - Game Clock
-
-- (void) startTimer {
-    _blackRemainingTimeLabel.text = @"00:05";
-    _whiteRemainingTimeLabel.text = @"00:05";
-    self.gameClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self
-                                                    selector:@selector(timerCallback)
-                                                    userInfo:nil
-                                                     repeats:YES];
-}
-
-- (void)timerCallback {
-    NSMutableString *result = [NSMutableString string];
-    int iMinutes = 25;
-    int iSeconds = 0;
-   
-    if([self.game.turn isEqualToString:GobanBlackSpotString]) {
-        iMinutes = [[self.blackRemainingTimeLabel.text substringToIndex:2] intValue];
-        iSeconds = [[self.blackRemainingTimeLabel.text substringFromIndex:3] intValue];
-        if(iMinutes < 0) {
-            [self timeUp];
-        }
-        else if(iSeconds <= 0) {
-            iMinutes--;
-            iSeconds = 59;
-        }
-        else {
-            iSeconds--;
-        }
-        
-        if(iMinutes < 0) {
-            [self.gameClock invalidate];
-            self.gameClock = nil;
-            [self timeUp];
-        }
-        else {
-            result = [NSMutableString stringWithFormat:@"%.2d:%.2d",iMinutes,iSeconds];
-            self.blackRemainingTimeLabel.text = result;
-        }
-    }
-    else if([self.game.turn isEqualToString:GobanWhiteSpotString]) {
-        iMinutes = [[self.whiteRemainingTimeLabel.text substringToIndex:2] intValue];
-        iSeconds = [[self.whiteRemainingTimeLabel.text substringFromIndex:3] intValue];
-        if(iSeconds <= 0) {
-            iMinutes--;
-            iSeconds = 59;
-        }
-        else {
-            iSeconds--;
-        }
-        
-        if(iMinutes < 0) {
-            [self.gameClock invalidate];
-            self.gameClock = nil;
-            [self timeUp];
-        }
-        else {
-            result = [NSMutableString stringWithFormat:@"%.2d:%.2d",iMinutes,iSeconds];
-            self.whiteRemainingTimeLabel.text = result;
-        }
-    }
-}
-
-- (void)timeUp {
-    NSString *title = nil;
-    NSString *message = nil;
-    NSString *cancelButtonTitle = @"OK";
-    if([self.game.turn isEqualToString:GobanBlackSpotString]) {
-        title = @"White Wins!";
-        message = @"Black ran out of time!";
-    }
-    else {
-        title = @"Black Wins!";
-        message = @"White ran out of time!";
-    }
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:cancelButtonTitle
-                                          otherButtonTitles:nil];
-    [alert show];
-    [self.view setUserInteractionEnabled:NO];
-}
 #pragma mark - UIGestureRecognizers
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -411,21 +336,92 @@
         [self viewDidLoad];
     }
 }
-#pragma mark - Using SocketIO
-//- (void) sendMessage:(NSString *)message
-//{
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        if (self.socketRoom.roomReady) {
-//            [self.socketRoom.socket emit:@"message" withItems:@[message, self.socketRoom.roomName, self.socketRoom.userName]];
-//        }
-//        [self sendMessage:[NSString stringWithFormat:@"message %d", self.messageIdx++]];
-//    });
-//}
+#pragma mark - Game Clock
 
+- (void) startTimer {
+    _blackRemainingTimeLabel.text = @"00:05";
+    _whiteRemainingTimeLabel.text = @"00:05";
+    self.gameClock = [NSTimer scheduledTimerWithTimeInterval:1 target:self
+                                                    selector:@selector(timerCallback)
+                                                    userInfo:nil
+                                                     repeats:YES];
+}
 
+- (void)timerCallback {
+    NSMutableString *result = [NSMutableString string];
+    int iMinutes = 25;
+    int iSeconds = 0;
+    
+    if([self.game.turn isEqualToString:GobanBlackSpotString]) {
+        iMinutes = [[self.blackRemainingTimeLabel.text substringToIndex:2] intValue];
+        iSeconds = [[self.blackRemainingTimeLabel.text substringFromIndex:3] intValue];
+        if(iMinutes < 0) {
+            [self timeUp];
+        }
+        else if(iSeconds <= 0) {
+            iMinutes--;
+            iSeconds = 59;
+        }
+        else {
+            iSeconds--;
+        }
+        
+        if(iMinutes < 0) {
+            [self.gameClock invalidate];
+            self.gameClock = nil;
+            [self timeUp];
+        }
+        else {
+            result = [NSMutableString stringWithFormat:@"%.2d:%.2d",iMinutes,iSeconds];
+            self.blackRemainingTimeLabel.text = result;
+        }
+    }
+    else if([self.game.turn isEqualToString:GobanWhiteSpotString]) {
+        iMinutes = [[self.whiteRemainingTimeLabel.text substringToIndex:2] intValue];
+        iSeconds = [[self.whiteRemainingTimeLabel.text substringFromIndex:3] intValue];
+        if(iSeconds <= 0) {
+            iMinutes--;
+            iSeconds = 59;
+        }
+        else {
+            iSeconds--;
+        }
+        
+        if(iMinutes < 0) {
+            [self.gameClock invalidate];
+            self.gameClock = nil;
+            [self timeUp];
+        }
+        else {
+            result = [NSMutableString stringWithFormat:@"%.2d:%.2d",iMinutes,iSeconds];
+            self.whiteRemainingTimeLabel.text = result;
+        }
+    }
+}
+
+- (void)timeUp {
+    NSString *title = nil;
+    NSString *message = nil;
+    NSString *cancelButtonTitle = @"OK";
+    if([self.game.turn isEqualToString:GobanBlackSpotString]) {
+        title = @"White Wins!";
+        message = @"Black ran out of time!";
+    }
+    else {
+        title = @"Black Wins!";
+        message = @"White ran out of time!";
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:cancelButtonTitle
+                                          otherButtonTitles:nil];
+    [alert show];
+    [self.view setUserInteractionEnabled:NO];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

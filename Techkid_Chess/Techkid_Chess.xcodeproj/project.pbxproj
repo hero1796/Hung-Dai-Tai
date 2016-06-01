@@ -257,7 +257,6 @@
 		46E5C00C1CF9A796002A7887 /* Techkid_Chess */ = {
 			isa = PBXGroup;
 			children = (
-				322904A11CFAD33D00ACCCEE /* Go Game */,
 				46E5C0241CF9A7AD002A7887 /* SocketIO */,
 				46E5C0101CF9A796002A7887 /* AppDelegate.h */,
 				46E5C0111CF9A796002A7887 /* AppDelegate.m */,
@@ -265,6 +264,7 @@
 				46E5C0191CF9A796002A7887 /* Assets.xcassets */,
 				46E5C01B1CF9A796002A7887 /* LaunchScreen.storyboard */,
 				46E5C01E1CF9A796002A7887 /* Info.plist */,
+				322904A11CFAD33D00ACCCEE /* Go Game */,
 				46E5C00D1CF9A796002A7887 /* Supporting Files */,
 			);
 			path = Techkid_Chess;
@@ -281,14 +281,14 @@
 		46E5C0241CF9A7AD002A7887 /* SocketIO */ = {
 			isa = PBXGroup;
 			children = (
+				46E5C0581CF9A7AD002A7887 /* Source */,
+				46E5C0551CF9A7AD002A7887 /* SocketHelp */,
+				46E5C02B1CF9A7AD002A7887 /* CoreDataGenerated */,
 				46E5C0251CF9A7AD002A7887 /* ChatData.xcdatamodeld */,
 				46E5C0271CF9A7AD002A7887 /* ChatRoomViewController.h */,
 				46E5C0281CF9A7AD002A7887 /* ChatRoomViewController.m */,
-				46E5C02B1CF9A7AD002A7887 /* CoreDataGenerated */,
 				46E5C0301CF9A7AD002A7887 /* DataManager.h */,
 				46E5C0311CF9A7AD002A7887 /* DataManager.m */,
-				46E5C0551CF9A7AD002A7887 /* SocketHelp */,
-				46E5C0581CF9A7AD002A7887 /* Source */,
 			);
 			path = SocketIO;
 			sourceTree = "<group>";

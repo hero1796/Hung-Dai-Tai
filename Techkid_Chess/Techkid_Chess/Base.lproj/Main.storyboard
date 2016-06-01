@@ -116,6 +116,24 @@
             </objects>
             <point key="canvasLocation" x="868" y="-372"/>
         </scene>
+        <!--Chat room View Controller-->
+        <scene sceneID="p5a-Ya-BI9">
+            <objects>
+                <viewController id="OrZ-1l-dXT" userLabel="Chat room View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n4L-Vy-n28"/>
+                        <viewControllerLayoutGuide type="bottom" id="lE4-x2-5fa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tXM-6v-FGL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOD-ON-tov" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1523" y="-372"/>
+        </scene>
         <!--Go offline-->
         <scene sceneID="k4n-5m-0On">
             <objects>
